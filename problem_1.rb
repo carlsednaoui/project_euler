@@ -8,3 +8,6 @@ end
 
 # sum all the numebrs up
 puts numbers.inject{ |sum, el| sum + el }
+
+# One liner
+# puts (1...1000).reduce(0){ |sum, el| (el % 3 == 0) || (el % 5 == 0) ? sum + el : sum }
