@@ -1,5 +1,3 @@
-# Elegan implementation: http://justintallant.com/project-euler-problem-3-in-ruby/?doing_wp_cron=1365246459.5397760868072509765625
-
 integer = 600851475143
 
 @prime_numbers = []
@@ -15,3 +13,11 @@ end
 
 get_primes(integer)
 puts @prime_numbers
+
+
+# # Cheating alternative
+# integer = 600851475143
+# require 'prime'
+# puts integer.prime_division.inspect
+
+# Elegant implementation: http://justintallant.com/project-euler-problem-3-in-ruby/?doing_wp_cron=1365246459.5397760868072509765625
