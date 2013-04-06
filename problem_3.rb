@@ -1,23 +1,21 @@
-integer = 600851475143
+number = 600851475143
+@chain = []
 
-@prime_numbers = []
+def is_prime?(n)
+  (2..n-1).each do |i|
+    return n % i == 0 ? false : true
+  end
+end
 
-def get_primes(integer)
-  (2..integer).each do |i|
-    if integer % i == 0
-      @prime_numbers.push(i)
-      break if (@prime_numbers.reduce(1){ |sum, el| sum * el } == integer)
+def get_primes(n)
+  (2..n).each do |i|
+    if is_prime?(i) && (n % i == 0)
+      @chain.push(i)
+      get_primes(n / i)
+      break
     end
   end
 end
 
-get_primes(integer)
-puts @prime_numbers
-
-
-# # Cheating alternative
-# integer = 600851475143
-# require 'prime'
-# puts integer.prime_division.inspect
-
-# Elegant implementation: http://justintallant.com/project-euler-problem-3-in-ruby/?doing_wp_cron=1365246459.5397760868072509765625
+get_primes(number)
+puts @chain.last
