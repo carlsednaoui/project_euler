@@ -3,7 +3,7 @@ start_time = Time.now
 palindromes = []
 
 (1..999).each do |y|
-  (1..999).each do |z|
+  (y..999).each do |z|
     if (y * z).to_s == (y * z).to_s.reverse
       palindromes.push(y * z)
     end
